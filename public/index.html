@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Database</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Modern Student Database</h1>
+      <p>Visual dashboard for student records, lookup, and analytics.</p>
+    </header>
+
+    <div class="tabs">
+      <button type="button" class="tab-button active" data-tab="manage-section">Manage Students</button>
+      <button type="button" class="tab-button" data-tab="lookup-section">Lookup Student</button>
+    </div>
+
+    <div class="tab-content active" id="manage-section">
+      <section class="stats-grid">
+        <article class="stat-card">
+          <p>Total Students</p>
+          <strong id="total-students">0</strong>
+        </article>
+        <article class="stat-card">
+          <p>Last Added</p>
+          <strong id="last-added">—</strong>
+        </article>
+        <article class="stat-card">
+          <p>Search Active</p>
+          <strong id="search-status">No filter</strong>
+        </article>
+      </section>
+
+      <section class="form-section">
+        <div class="section-headline">
+          <h2>Add Student</h2>
+          <span>Enter a new student record into the dashboard.</span>
+        </div>
+        <form id="student-form">
+        <div class="form-row">
+          <label for="student-name">Name</label>
+          <input id="student-name" type="text" placeholder="Enter student name" required />
+        </div>
+        <div class="form-row">
+          <label for="student-id">Student ID / Roll Number</label>
+          <input id="student-id" type="text" placeholder="Enter student ID or roll number" required />
+        </div>
+        <div class="form-row">
+          <label for="student-grade">Grade</label>
+          <input id="student-grade" type="text" placeholder="Enter grade or class" required />
+        </div>
+        <div class="form-row">
+          <label for="student-aadhar">Aadhar Number</label>
+          <input id="student-aadhar" type="text" placeholder="Enter Aadhar number" required />
+        </div>
+        <div class="form-row">
+          <label for="student-phone">Phone Number</label>
+          <input id="student-phone" type="text" placeholder="Enter phone number" required />
+        </div>
+        <div class="form-row full-width">
+          <label for="student-email">Email</label>
+          <input id="student-email" type="email" placeholder="Enter email address" required />
+        </div>
+        <div class="actions">
+          <button type="submit">Add Student</button>
+          <button type="button" id="clear-button">Clear All</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="table-section">
+      <div class="table-header">
+        <h2>Student Records</h2>
+        <input id="search-input" type="search" placeholder="Search by name, ID, roll number, grade, Aadhar, phone, or email" />
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>ID</th>
+              <th>Grade</th>
+              <th>Aadhar</th>
+              <th>Phone</th>
+              <th>Email</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="student-table-body">
+            <tr><td colspan="7" class="empty">No student records yet.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    </div>
+
+    <div class="tab-content" id="lookup-section">
+      <section class="lookup-section">
+        <h2>Lookup Student</h2>
+        <p>Enter a student ID or roll number to show full details.</p>
+        <form id="lookup-form" class="lookup-form">
+          <div class="form-row full-width">
+            <label for="lookup-id-input">Student ID / Roll Number</label>
+            <input id="lookup-id-input" type="text" placeholder="Search by ID or roll number" required />
+          </div>
+          <div class="actions">
+            <button type="submit">Find Student</button>
+          </div>
+        </form>
+        <div id="lookup-result" class="lookup-result empty">
+          Search by ID or roll number to view student details.
+        </div>
+      </section>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
