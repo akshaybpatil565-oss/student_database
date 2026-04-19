@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "buildCommand": "npm install",
+  "public": true,
+  "functions": {
+    "api/**/*.js": {
+      "memory": 512,
+      "maxDuration": 30
+    }
+  }
+}

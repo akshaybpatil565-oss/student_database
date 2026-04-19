@@ -1,0 +1,15 @@
+{
+  "name": "student-database",
+  "version": "1.0.0",
+  "description": "Modern Student Database with Vercel Backend",
+  "engine": {
+    "node": "18.x"
+  },
+  "dependencies": {
+    "mongodb": "^5.9.0",
+    "cors": "^2.8.5"
+  },
+  "scripts": {
+    "dev": "vercel dev"
+  }
+}
